@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import springkafka.Chat.Domain.ChatMessage;
 import springkafka.Chat.Domain.ChatMessageType;
+import springkafka.Chat.Service.ChatService;
 import springkafka.Chat.producer.ChatMessageProducer;
 
 @RestController
@@ -19,6 +20,8 @@ public class ChatMessageController {
 
     @Autowired
     ChatMessageProducer chatMessageProducer;
+
+
 
     @PostMapping("/chatmessage")
     public ResponseEntity<ChatMessage> postChatMessage(@RequestBody ChatMessage chatMessage) throws JsonProcessingException {
